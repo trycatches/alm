@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import "assets/scss/variables";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "assets/scss/button";
+@import "assets/scss/avatar";
+@import "node_modules/@ng-select/ng-select/themes/default.theme.css";
+@import 'node_modules/@swimlane/ngx-datatable/index.css';
+@import 'node_modules/@swimlane/ngx-datatable/themes/bootstrap';
+@import 'node_modules/@swimlane/ngx-datatable/assets/icons.css';
+
+
+body{
+    // background-image: url('assets/images/bg-image.avif');
+    background-size: cover;
+}

@@ -1,0 +1,90 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow position-sticky top-0 start-0">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+          <img src="assets/images/chola-logo.png" class="logo"/> ALM
+        </a>
+        <div class="d-flex d-lg-none">
+          <ul class="nav">
+            <ng-content *ngTemplateOutlet="extraNav"></ng-content>
+            <li class="nav-item">
+              <div class="nav-link px-0">
+                <button class="navbar-toggler border-0 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <fa-icon class="text-success" [icon]="faIcons.faEllipsisV" ></fa-icon>
+                </button>  
+              </div>
+            </li>
+          </ul>
+        </div>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Data Loads</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Calc & Summ Runs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">GL Bucketing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">GL Mapping</a>
+          </li>
+        </ul>
+        <div class="d-none d-lg-block">
+          <ul class="nav me-auto mb-2 mb-lg-0">
+            <ng-content *ngTemplateOutlet="extraNav"></ng-content>
+          </ul> 
+        </div>
+      </div>
+    </div>
+</nav>
+
+<ng-template #extraNav>
+  <!-- <li class="nav-item nav-spinner">
+    <a class="nav-link disabled mt-1">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </a>
+  </li> -->
+  <!-- <li class="nav-item">
+    <div class="nav-link month-selector px-0">
+      <ng-select  [items]="months" 
+                  [searchable] = "false"
+                  [clearable] = "false"
+                  bindLabel="name" 
+                  bindValue="id" 
+                  [(ngModel)]="selectedMonth"
+                  placeholder="Select Month">
+      </ng-select>
+    </div>
+  </li> -->
+  <li class="nav-item dropdown">
+    <a class="my-1 btn btn-outline-primary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <fa-icon [icon]="faIcons.faDownload" ></fa-icon> Download 
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end shadow">     
+      <li><a class="dropdown-item" href="#"><fa-icon [icon]="faIcons.faFilePdf" ></fa-icon> Summery Returns</a></li>
+      <li><a class="dropdown-item" href="#"><fa-icon [icon]="faIcons.faFilePdf" ></fa-icon> Asset Summery</a></li>
+    </ul>
+  </li>
+  <li class="nav-item dropdown">
+    <a class="nav-link avatar-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <span class="avatar avatar-32 bg-primary text-white rounded-circle">J</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end shadow py-0">
+      <li>
+        <div class="name-card bg-body-secondary pt-3">
+            <div class="pb-2 text-center">
+              <span class="avatar avatar-48 bg-primary text-white rounded-circle">J</span>
+            </div>
+            <h6 class="text-center mb-0">John Smith</h6>
+            <p class="text-center">ALM Business User</p>
+            <hr class="hr mt-1 mb-0" />
+        </div>
+      </li>
+      <li><a class="dropdown-item" href="#">User Management</a></li>
+      <li><a class="dropdown-item" href="#">Logout</a></li>
+    </ul>
+  </li>
+</ng-template>

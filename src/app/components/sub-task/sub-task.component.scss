@@ -1,0 +1,23 @@
+
+.sub-task{
+    h4{
+        font-family: 'Raleway', sans-serif;
+        font-weight: 400;
+    }
+    
+    .status-bar{
+        font-size: 14px;
+        .ng-fa-icon, span{
+            margin-right: 6px;
+        }
+    }
+    .progress{
+        // padding-left: 15px;
+        // padding-right: 15px;
+    }
+    .btn-run{
+        .spinner-border{
+            font-size: 11px;
+        }    
+    }
+}
