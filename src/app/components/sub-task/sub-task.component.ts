@@ -7,7 +7,7 @@ import { faPlay, faCircleCheck, faClock, faUser, faHourglass3 } from '@fortaweso
   styleUrls: ['./sub-task.component.scss']
 })
 export class SubTaskComponent {
-  faIcons = {
+  faIcons:any = {
     faPlay : faPlay,
     faCircleCheck : faCircleCheck,
     faClock : faClock,
