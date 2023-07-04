@@ -13,6 +13,11 @@ import { TaskComponent } from './components/task/task.component';
 import { SubTaskComponent } from './components/sub-task/sub-task.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
 import { MappingsComponent } from './pages/mappings/mappings.component';
+import { JwtModule } from "@auth0/angular-jwt";
+
+export function tokenGetter() {
+  return localStorage.getItem("access_token");
+}
 
 @NgModule({
   declarations: [
@@ -31,7 +36,14 @@ import { MappingsComponent } from './pages/mappings/mappings.component';
     FontAwesomeModule,
     NgSelectModule,
     FormsModule,
-    NgxDatatableModule
+    NgxDatatableModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter,
+        allowedDomains: ["example.com"],
+        disallowedRoutes: ["http://example.com/examplebadroute/"],
+      },
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
