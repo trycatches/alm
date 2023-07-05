@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faEllipsisV, faUser, faCloudArrowDown, faFilePdf } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -28,6 +28,7 @@ export class NavigationComponent {
       { id: 11, name: 'November' },
       { id: 12, name: 'December' },
   ];
+  @Input() data: any;
 
   ngOnInit() {
     this.selectedMonth = (new Date().getMonth() + 1);

@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary shadow position-sticky top-0 start-0">
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow position-sticky top-0 start-0 border-bottom border-primary">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="dashboard">
           <img src="assets/images/chola-logo.png" class="logo"/> ALM
         </a>
         <div class="d-flex d-lg-none">
@@ -8,26 +8,17 @@
             <ng-content *ngTemplateOutlet="extraNav"></ng-content>
             <li class="nav-item">
               <div class="nav-link px-0">
-                <button class="navbar-toggler border-0 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler border-0 text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavigation" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <fa-icon class="text-success" [icon]="faIcons.faEllipsisV" ></fa-icon>
                 </button>  
               </div>
             </li>
           </ul>
         </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse" id="primaryNavigation">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Data Loads</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Calc & Summ Runs</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">GL Bucketing</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">GL Mapping</a>
+          <li class="nav-item" *ngFor="let nav of data.navigations">
+            <a class="nav-link text-uppercase" aria-current="page" [routerLink]="[nav.link]" [routerLinkActive]="['active']">{{nav.title}}</a>
           </li>
         </ul>
         <div class="d-none d-lg-block">

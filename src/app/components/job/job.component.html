@@ -1,0 +1,34 @@
+<div class="job">
+    <div class="row">
+        <div class="col-12 col-md-10">
+            <div class="row">
+                <h4>Liability Summary</h4>
+                <div class="status-bar">
+                    <div class="d-block d-md-inline" data-toggle="tooltip" data-placement="top" title="Tooltip on top">
+                        <fa-icon class="text-success" [icon]="faIcons.faCircleCheck" ></fa-icon>
+                        <span class="text-success">Completed</span>
+                    </div>
+                    <div class="d-block d-md-inline">
+                        <fa-icon [icon]="faIcons.faClock" class="text-black-50"></fa-icon>
+                        <span class="text-black-50">20/06/2023 3:45 PM</span>
+                    </div>
+                    <div class="d-block d-md-inline" data-bs-title="Assignee">
+                        <fa-icon [icon]="faIcons.faUser" class="text-black-50"></fa-icon>
+                        <span class="text-black-50">John Smith</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-2 d-flex justify-content-end">
+            <button type="button" class="btn btn-primary d-flex align-self-center btn-run">
+                <fa-icon [icon]="faIcons.faPlay"></fa-icon><span class="d-inline-block ml-1">&nbsp;RUN</span>
+                <!-- <fa-icon [icon]="faIcons.faHourglass"></fa-icon> -->
+                <!-- <span
+                    class="spinner-border spinner-border-sm"
+                    role="status"
+                    aria-hidden="true"
+                    ></span> -->
+            </button>
+        </div>
+    </div>
+</div>

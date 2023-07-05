@@ -1,11 +1,11 @@
-<section class="signin vh-100 d-flex  align-items-center">
+<section class="signin vh-100 d-flex align-items-center">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-12 col-lg-10">
         <div class="wrap d-md-flex">
           <div class="d-none d-md-block col-md-6 img" style="background-image: url('../../../assets/images/Office-Automation.jpg');">
           </div>
-          <div class="col-12 col-md-6 p-4 p-md-5">
+          <div class="col-12 col-md-6 p-4 p-md-5 border-bottom border-danger border-3">
             <div class="row mb-3">
               <div class="col-4 offset-4 col-md-2 offset-md-0 p-0">
                 <img src="../../../assets/images/chola-logo.png" alt="" class="w-100">
@@ -13,21 +13,33 @@
               <div class="col-12 col-md-10 d-flex  align-items-center">
                 <div>
                   <h3 class="m-0">Sign In</h3>
-                  <p class="m-0"><strong>Chola</strong> - Asset Liability Management</p>  
+                  <p class="m-0"><strong>Chola</strong> - Assets and Liability Management</p>  
                 </div>
               </div>
             </div>
-            <form action="#" class="signin-form">
+            <form action="#" class="signin-form needs-validation" [ngClass]="attempts.count ? 'was-validated' : ''" [formGroup]="signinForm" (ngSubmit)="signin()">
               <div class="form-group mb-3">
                 <label class="label" for="name">Username</label>
-                <input type="text" class="form-control" placeholder="Username" required>
+                <input type="text" class="form-control mt-1" placeholder="Username" name="username" formControlName="username" required>
+                
               </div>
               <div class="form-group mb-3">
                 <label class="label" for="password">Password</label>
-                <input type="password" class="form-control" placeholder="Password" required>
+                <input type="password" class="form-control mt-1" placeholder="Password" name="password" formControlName="password" autocomplete="on" required>
               </div>
-              <div class="form-group mb-5">
-                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Sign In</button>
+              <div class="alert alert-danger" role="alert" *ngIf="attempts.count && !attempts.status">
+                The username and password you entered did not match our records. Please try again.
+              </div>
+              <div class="alert alert-success" role="alert" *ngIf="attempts.count && attempts.status">
+                You have successfully logged into the Assets and Liability Management System.
+              </div>
+              <div class="d-grid mb-5">
+                <button type="submit" class="btn btn-primary rounded submit px-3" [ngClass]="{'btn-success': attempts.status}" >
+                  <span *ngIf="!attempts.processing">Sign In</span>
+                  <div class="spinner-border spinner-border-sm text-light" role="status" *ngIf="attempts.processing">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </button>
               </div>
               <!-- <div class="form-group d-md-flex">
                 <div class="w-50 text-left">
@@ -42,6 +54,7 @@
               </div> -->
             </form>
             <!-- <p class="text-center">Not a member? <a data-toggle="tab" href="#signup">Sign Up</a></p> -->
+            <!-- Form Status: {{ signinForm.status }} -->
           </div>
         </div>
       </div>

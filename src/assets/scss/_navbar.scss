@@ -1,0 +1,29 @@
+.navbar{
+    // background: linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(29,67,131,0.5) 100%);
+
+    .navbar-nav{
+        .nav-link{
+            &.active{
+                position: relative;
+                font-weight: 600;
+                &::before{
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #ea2126;
+                    bottom: 0;
+                    @media (min-width: 992px) {
+                        height: 4px;
+                        bottom: -13px;
+                    }
+                    left: 0;
+                    // transform: translate(-50%, -50%);
+                    // border-radius: 50%;
+                    // z-index: -1;
+                    // opacity: 0.5;
+                }
+            }
+        }
+    }
+}

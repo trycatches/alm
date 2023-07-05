@@ -1,4 +1,4 @@
-.task{
+.jobs{
     > .ng-fa-icon{
         position: absolute;
         opacity: 0.1;
@@ -22,4 +22,21 @@
     // .list-group-item{
     //     border-bottom: 2px;
     // }
+    .accordion{
+        .accordion-button{
+            display: block;
+            &::after{
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+        .accordion-button:not(.collapsed){
+            background-color: inherit !important;
+            box-shadow: inherit !important;
+        }
+        .accordion-body{
+            // background-color: #f7f5f5;
+        }
+    }
 }

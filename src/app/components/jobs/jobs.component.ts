@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { faFileExcel, faChartPie } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-task',
-  templateUrl: './task.component.html',
-  styleUrls: ['./task.component.scss']
+  selector: 'app-jobs',
+  templateUrl: './jobs.component.html',
+  styleUrls: ['./jobs.component.scss']
 })
-export class TaskComponent {
+export class JobsComponent {
   faIcons = {
     faBgIcont : faChartPie
   }

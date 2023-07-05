@@ -7,14 +7,37 @@ import { AuthGuard } from './auth/auth.guard';
 import { RoleGuard } from './auth/role.guard';
 
 const routes: Routes = [
-  // { path: '', component: SigninComponent, canActivate: [AuthGuard] },
+  { 
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
+    // canActivate: [AuthGuard]
+  },
   { 
     path: 'dashboard', 
-    component: SigninComponent, 
-    canActivate: [AuthGuard, RoleGuard],
-    data: {
-      role:['admin','it','business']
-    }
+    component: DashboardComponent, 
+    // canActivate: [AuthGuard, RoleGuard],
+    // data: {
+    //   role:['admin','it','business']
+    // }
+    children:[
+      {
+        path: 'data-leads', 
+        component: DashboardComponent, 
+      },
+      {
+        path: 'summ-runs', 
+        component: DashboardComponent, 
+      },
+      {
+        path: 'gl-bucketing', 
+        component: DashboardComponent, 
+      },
+      {
+        path: 'gl-mapping', 
+        component: DashboardComponent, 
+      },
+    ]
   },
   { path: 'mappings', component: MappingsComponent },
   { path: 'signin', component: SigninComponent },
