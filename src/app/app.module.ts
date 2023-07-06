@@ -11,9 +11,11 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { JobsComponent } from './components/jobs/jobs.component';
 import { JobComponent } from './components/job/job.component';
 import { PreloaderComponent } from './components/preloader/preloader.component';
-import { MappingsComponent } from './pages/mappings/mappings.component';
+import { GlComponent } from './pages/gl/gl.component';
 import { JwtModule } from "@auth0/angular-jwt";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTableComponent } from './components/data-table/data-table.component';
+import { UsersComponent } from './pages/users/users.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -28,7 +30,9 @@ export function tokenGetter() {
     JobsComponent,
     JobComponent,
     PreloaderComponent,
-    MappingsComponent
+    GlComponent,
+    DataTableComponent,
+    UsersComponent
   ],
   imports: [
     BrowserModule,

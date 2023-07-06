@@ -1,0 +1,81 @@
+<div class="row mb-3">
+    <div class="col-4 col-md-8 col-xl-9">Show 
+        <ng-select  [items]="appData.activeConfig.table.rowNumber" 
+                    [searchable] = "false"
+                    [clearable] = "false"
+                    [(ngModel)]="rowNumber"
+                    class="d-inline-block">
+        </ng-select>
+    </div>
+    <div class="col-8 col-md-4 col-xl-3">
+      <form class="search">
+        <div class="input-group width-full">
+            <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-search">
+            <button class="btn btn-primary" type="button" id="button-search">
+                <fa-icon [icon]="faIcons.faSearch" ></fa-icon>
+            </button>
+          </div>
+      </form>
+    </div>
+  </div>
+  <div class="card mb-3">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>Larry</td>
+                <td>the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  <div class="row mb-3">
+    <div class="col-12 col-md-8 col-xl-9 d-flex align-items-center">
+      Showing 1 to 10 of 31 Entries
+    </div>
+    <div class="col-12 col-md-4 col-xl-3 d-flex justify-content-end">
+      <nav aria-label="...">
+        <ul class="pagination mb-0">
+          <li class="page-item disabled">
+            <span class="page-link">Previous</span>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item active" aria-current="page">
+            <span class="page-link">2</span>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>  
+    </div>
+  </div>

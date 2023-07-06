@@ -1,0 +1,6 @@
+<app-navigation [data]="appData"></app-navigation>
+<div class="container mt-2">
+    <!-- Button trigger modal -->
+    <h3 class="border-bottom pb-2 pt-4 mb-4">{{appData.activeConfig.title}}</h3>
+    <app-data-table [appData]="appData"></app-data-table>
+</div>
