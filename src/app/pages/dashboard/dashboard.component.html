@@ -1,15 +1,12 @@
 <app-navigation [data]="data"></app-navigation>
 <div class="container mt-2">
     <!-- Button trigger modal -->
-    <h3 class="border-bottom pb-2 pt-4 mb-4">Pre Stage</h3>
-    <!-- <app-jobs></app-jobs> -->
-    <!-- <app-job></app-job> -->
-    <app-jobs></app-jobs>
-
-
-    <!-- <app-task></app-task>
-    <app-task></app-task>
-    <h3 class="border-bottom pb-2 pt-4 mb-4">Pre Stage</h3>
-    <app-task></app-task>
-    <app-task></app-task> -->
+    <div *ngIf="data.section === 'data-leads'">
+        <h3 class="border-bottom pb-2 pt-4 mb-4">Pre Stage</h3>
+        <app-jobs></app-jobs>
+    </div>
+    <div *ngIf="data.section === 'gl-bucketing'">
+        <h3 class="border-bottom pb-2 pt-4 mb-4">GL Mapping</h3>
+        <app-mappings></app-mappings>
+    </div>
 </div>

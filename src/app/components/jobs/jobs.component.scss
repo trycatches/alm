@@ -19,16 +19,21 @@
         font-family: 'Raleway', sans-serif;
         font-weight: 600;
     }
-    // .list-group-item{
-    //     border-bottom: 2px;
-    // }
     .accordion{
         .accordion-button{
             display: block;
+            position: absolute;
+            left: -8px;
+            width: 22px;
+            height: 22px;
+            top: 12px;
             &::after{
                 position: absolute;
                 left: 0;
-                bottom: 0;
+                top: 0;
+                color: white;
+                background-size: 16px;
+                background-position: center;
             }
         }
         .accordion-button:not(.collapsed){
@@ -36,7 +41,9 @@
             box-shadow: inherit !important;
         }
         .accordion-body{
-            // background-color: #f7f5f5;
+            .list-group-item{
+                border-left: 1px solid rgb(224, 224, 224);;
+            }
         }
     }
 }
