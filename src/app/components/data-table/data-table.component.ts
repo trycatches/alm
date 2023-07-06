@@ -8,6 +8,8 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 })
 export class DataTableComponent {
   @Input() appData:any;
+  @Input() d:any;
+
   rowNumbers:object = [];
   rowNumber:number = 0;
   faIcons:any = {

@@ -1,1 +1,17 @@
-<p>users works!</p>
+<app-navigation [appData]="appData"></app-navigation>
+<div class="container mt-2">
+    <!-- Button trigger modal -->
+    <h3 class="border-bottom pb-2 pt-4 mb-4">{{appData.activeConfig.title}}</h3>
+    <app-data-table 
+        [appData]="appData"
+        (addUser)="addUser()"
+    ></app-data-table>
+</div>
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="myModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        ...
+      </div>
+    </div>
+</div>

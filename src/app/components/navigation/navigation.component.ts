@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { faEllipsisV, faUser, faCloudArrowDown, faFilePdf } from '@fortawesome/free-solid-svg-icons';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Router } from '@angular/router';
+import { faEllipsisV, faUser, faCloudArrowDown, faFileExcel, faPlusCircle} from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-navigation',
@@ -11,26 +12,25 @@ export class NavigationComponent {
     faEllipsisV : faEllipsisV,
     faUser : faUser,
     faDownload:faCloudArrowDown,
-    faFilePdf : faFilePdf
+    faFile : faFileExcel,
+    faPlus : faPlusCircle
   };
   selectedMonth:any;
-  months = [
-      { id: 1, name: 'January' },
-      { id: 2, name: 'February' },
-      { id: 3, name: 'March' },
-      { id: 4, name: 'April' },
-      { id: 5, name: 'May' },
-      { id: 6, name: 'June' },
-      { id: 7, name: 'July' },
-      { id: 8, name: 'August' },
-      { id: 9, name: 'September' },
-      { id: 10, name: 'October' },
-      { id: 11, name: 'November' },
-      { id: 12, name: 'December' },
-  ];
-  @Input() data: any;
+  @Input() appData:any;
+  u:string = "";
+  @Output("addUser") addUser: EventEmitter<any> = new EventEmitter();
 
+
+  constructor(private router: Router) {
+  }
+  
   ngOnInit() {
+    console.log(this.appData)
+    // this.selectedMonth = this.appData.appData.selectedMonth; 
     this.selectedMonth = (new Date().getMonth() + 1);
+    this.u = this.appData.profile.username.charAt(0);
+  }
+  addUserEmit(){
+    this.addUser.emit();
   }
 }

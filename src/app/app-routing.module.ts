@@ -5,14 +5,15 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { GlComponent } from './pages/gl/gl.component';
 import { AuthGuard } from './auth/auth.guard';
 import { RoleGuard } from './auth/role.guard';
+import { UsersComponent } from './pages/users/users.component';
 
 const routes: Routes = [
-  // { 
-  //   path: '',
-  //   redirectTo: '/dashboard',
-  //   pathMatch: 'full'
-  //   // canActivate: [AuthGuard]
-  // },
+  { 
+    path: '',
+    redirectTo: '/dashboard/data-leads',
+    pathMatch: 'full'
+    // canActivate: [AuthGuard]
+  },
   // { 
   //   path: 'dashboard', 
   //   component: DashboardComponent, 
@@ -47,6 +48,7 @@ const routes: Routes = [
   { path: 'dashboard/summ-runs', component: DashboardComponent },
   { path: 'gl/bucketing', component: GlComponent },
   { path: 'gl/mapping', component: GlComponent },
+  { path: 'user-management', component: UsersComponent },
   { path: 'signin', component: SigninComponent },
 ];
 

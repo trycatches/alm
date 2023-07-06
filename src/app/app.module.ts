@@ -16,6 +16,7 @@ import { JwtModule } from "@auth0/angular-jwt";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DataTableComponent } from './components/data-table/data-table.component';
 import { UsersComponent } from './pages/users/users.component';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 export function tokenGetter() {
   return localStorage.getItem("access_token");
@@ -32,7 +33,8 @@ export function tokenGetter() {
     PreloaderComponent,
     GlComponent,
     DataTableComponent,
-    UsersComponent
+    UsersComponent,
+    PaginationComponent
   ],
   imports: [
     BrowserModule,

@@ -10,9 +10,9 @@ import { AppData } from '../../constants/app-data';
 })
 export class DashboardComponent {
   // faCoffee = faCoffee;
-  data:any = AppData;
+  appData:any = AppData;
   constructor(private router: Router) {
-    // this.data.section = this.router.url.split('/').pop();
-    // console.log(this.data)
+    this.appData.section = this.router.url.split('/').pop();
+    this.appData.activeConfig = this.appData.configs[this.appData.section];
   }
 }
